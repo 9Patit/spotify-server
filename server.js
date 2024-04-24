@@ -40,7 +40,7 @@ app.post("/login", (req, res) => {
   console.log(code);  
   const spotifyApi = new SpotifyWebApi({
     // redirectUri: "http://localhost:5173",
-    redirectUri: "https://spotify-frontend-6zdvujwk7-gears-projects.vercel.app",
+    redirectUri: "https://spotify-frontendz.vercel.app/",
     clientId: "e0e2d01268884c5c86bef49f2533af70",
     clientSecret: "ac326f916d3e4c5fbf8000a5cb30fd22",
   });
