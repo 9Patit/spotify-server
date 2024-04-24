@@ -4,6 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const SpotifyWebApi = require("spotify-web-api-node");
 
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -40,9 +41,9 @@ app.post("/login", (req, res) => {
   console.log(code);  
   const spotifyApi = new SpotifyWebApi({
     // redirectUri: "http://localhost:5173",
-    redirectUri: "https://spotify-frontendz.vercel.app/",
-    clientId: "e0e2d01268884c5c86bef49f2533af70",
-    clientSecret: "ac326f916d3e4c5fbf8000a5cb30fd22",
+    redirectUri: env.process.REDIRECT_URI,
+    clientId: env.process.CLIENT_ID,
+    clientSecret: env.process.CLIENT_SECRET,
   });
 
   spotifyApi
