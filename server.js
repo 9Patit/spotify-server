@@ -39,11 +39,10 @@ app.post("/refresh", (req, res) => {
 app.post("/login", (req, res) => {
   const code = req.body.code;
   console.log(code);  
-  const spotifyApi = new SpotifyWebApi({
-    // redirectUri: "http://localhost:5173",
-    redirectUri: env.process.REDIRECT_URI,
-    clientId: env.process.CLIENT_ID,
-    clientSecret: env.process.CLIENT_SECRET,
+  const spotifyApi = new SpotifyWebApi({    
+    redirectUri: process.env.REDIRECT_URI,
+    clientId: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
   });
 
   spotifyApi
@@ -57,7 +56,7 @@ app.post("/login", (req, res) => {
       });
     })
     .catch((err) => {
-      console.log("Error!", err);
+      console.log("Error!!!", err);
       res.sendStatus(400);
     });
 });
